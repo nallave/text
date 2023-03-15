@@ -9,5 +9,5 @@ git clone -b main "sso://partner-code/flaxformer-new" /dev/shm/ff-oss
 cd /dev/shm/ff-oss 
 git remote add github https://github.com/google/flaxformer 
 git fetch github 
-git diff github/main origin/main
+git diff github/main origin/main | xclip
 rm -rf /dev/shm/ff-oss
