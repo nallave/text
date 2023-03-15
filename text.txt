@@ -1,0 +1,13 @@
+!/bin/bash
+#
+# Clones the flaxformer-new staging repo and generates a diff agains Github
+
+set -e  # fail and exit on any command erroring
+
+rm -rf /dev/shm/ff-oss 
+git clone -b main "sso://partner-code/flaxformer-new" /dev/shm/ff-oss 
+cd /dev/shm/ff-oss 
+git remote add github https://github.com/google/flaxformer 
+git fetch github 
+git diff github/main origin/main
+rm -rf /dev/shm/ff-oss
